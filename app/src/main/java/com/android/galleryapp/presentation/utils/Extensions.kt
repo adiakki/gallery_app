@@ -25,6 +25,7 @@ fun ImageView.loadImage(url: String) {
     if (TextUtils.isEmpty(url)) return
     Glide.with(context).load(url)
         .placeholder(R.drawable.rounde_rect_placeholder)
+        .skipMemoryCache(false)
         .transform(GranularRoundedCorners(AppUtils.dpToPx(context, 10), AppUtils.dpToPx(context, 10),0f,0f))
         .diskCacheStrategy(DiskCacheStrategy.ALL)
         .into(this)
