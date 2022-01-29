@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="galleryItem"
+            type="com.android.galleryapp.domain.entity.GalleryItem" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_rounded_top_corner"
+        android:layout_margin="@dimen/dimen_5dp"
+        android:paddingBottom="2dp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_item"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            setImage="@{galleryItem.url}"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"/>
+
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/dimen_14sp"
+            android:text="@{galleryItem.name}"
+            android:background="@drawable/bg_rounded_bottom_corner"
+            android:paddingVertical="@dimen/dimen_8dp"
+            android:paddingHorizontal="@dimen/dimen_8dp"
+            app:layout_constraintTop_toBottomOf="@+id/iv_item"
+            app:layout_constraintLeft_toLeftOf="@+id/iv_item"
+            app:layout_constraintRight_toRightOf="@+id/iv_item"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
